@@ -57,9 +57,8 @@ function restartTimer() {
   timer = setInterval(startTimer, 1000);
 }
 
+//cards do not match, animate and hide card value
 function resetPair(card1, card2) {
-  console.log('in resetpair');
-  //cards do not match, animate and hide card value
   card1.style.webkitAnimationPlayState = 'paused';
   card2.style.webkitAnimationPlayState = 'paused';
 
@@ -148,14 +147,12 @@ function flipCard(event) {
     }
     //if the user makes 10 or more moves, display 2 stars
     else if (moves === 10) {
-      console.log('user has made 10 moves, remove a star');
       starrating = 2;
       star2.classList.add('hidden');
       starratingdiv.innerHTML = starrating;
     }
     //if the user makes 20 moves, display 1 star
     else if (moves === 20) {
-      console.log('user has made 20 moves, remove a star');
       starrating = 1;
       star3.classList.add('hidden');
       starratingdiv.innerHTML = starrating;
@@ -196,14 +193,3 @@ function restartGame() {
   winningModal.style.display = 'none';
   displayCards();
 }
-
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
