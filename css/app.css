@@ -33,6 +33,10 @@ h1 {
     font-weight: 300;
 }
 
+.hidden {
+  display: none;
+}
+
 /*
  * Styles for the deck of cards
  */
@@ -63,6 +67,28 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    -webkit-animation-play-state: paused;
+    -webkit-animation-duration: .50s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(10px, 0, 0);
+  }
 }
 
 .deck .card.open {
@@ -79,6 +105,10 @@ h1 {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+}
+
+.deck .card.match.disabled {
+  pointer-events: none;
 }
 
 /*
@@ -105,5 +135,43 @@ h1 {
 
 .score-panel .restart {
     float: right;
+    cursor: pointer;
+}
+
+.timer {
+  margin-right: 20px;
+}
+
+/* Winning Modal*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 40px;
+  width: 50%;
+  height: auto;
+  background-color: #fff;
+  border: 5px solid lightblue;
+  margin: 0 auto;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
 }

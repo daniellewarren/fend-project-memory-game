@@ -16,69 +16,36 @@
         </header>
 
         <section class="score-panel">
+          <span class="timer">
+            <span class="time"></span>
+            <span>seconds</span>
+          </span>
         	<ul class="stars">
         		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star two"></i></li>
+        		<li><i class="fa fa-star three"></i></li>
         	</ul>
 
-        	<span class="moves">3</span> Moves
-
+        	<span id="moves"></span> Moves
             <div class="restart">
         		<i class="fa fa-repeat"></i>
         	</div>
         </section>
 
-        <ul class="deck">
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card open show">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
-        </ul>
+        <ul class="deck"></ul>
+
+        <div id="winningModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Congratulations! You win the game!</p>
+            <p>You completed the game in <span class="finaltime"></span> seconds.</p>
+            <p>Your star rating is <span class="starrating"></span></p>
+            <p>Would you like to play again?</p>
+            <button type="button" onclick="restartGame()">Yes</button>
+          </div>
+        </div>
+
     </div>
 
     <script src="js/app.js"></script>
